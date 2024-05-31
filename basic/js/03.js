@@ -23,7 +23,7 @@ $('#f2').contents().filter('input').css('background', 'blue') //선택한 요소
 $('li a').has('span').css('border', '10px solid green') // li a 중에서 span을 가진 요소
 $('li').not(':first').css('border', '4px solid aqua')  // 첫번째 요소가 아닌 전채요소 
 
-$('form section').filter('#f5').css('background', 'red') //필터로 거르기
+$('form section').filter('#f5').css('background', 'red') //필터로 그것만
 $('form').find('#f4').css('background', 'pink') //form안에서 요소찾기
 
 //is() 메서드 :물어보는 메서드 답은 참 거짓으로 나옴
