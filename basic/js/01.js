@@ -1,1 +1,1 @@
-$('l.ogo').css('color,' 'rad')
+$('.logo').css('color', 'red')
