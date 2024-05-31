@@ -1,0 +1,1 @@
+$('l.ogo').css('color,' 'rad')
