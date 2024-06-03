@@ -17,12 +17,13 @@ $('.list2').append(cloneList)
 $('.list2').empty()  //싹다 날림
 $('.list').remove()  // 공간은 남겨둠
 
-//relaceAll() replaceWith()
 
+//relaceAll() replaceWith()
 $('h1').replaceWith('<h3>replaceWith</h3>')
 $('<p>relaceAll</p>').replaceAll('.box div')
 
 
+// unwrap(), wrap(), wrapAll(), wrapInner()
 $('span').unwrap()// 부모 요소를  제거
 $('.p1').wrap('<div></div>') // 선택한 요소를 div로 감싼다
 $('.p3').wrapAll('<div></div>')// 요소전부를 div로 감싼다
