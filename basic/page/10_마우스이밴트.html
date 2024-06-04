@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <h1>마우스 이밴트</h1>
+    <div class="wrap">
+        <section>
+            <button>버튼1</button>
+            <p>내용1</p>
+            <button>버튼2</button>
+            <p>내용2</p>
+        </section>
+
+        <section>
+            <ul id="list_1">
+                <li>내용1</li>
+                <li>내용2</li>
+                <li>내용3</li>
+            </ul>
+            <ul id="list_2">
+                <li>내용1</li>
+                <li>내용2</li>
+                <li>내용3</li>
+            </ul>
+        </section>
+
+
+        <script>
+            //mouseover
+            $('list_1').on('.mouse')
+        </script>
+
+        <section>
+            <h1>mouseover</h1>
+        </section>
+
+        <section>
+            <select name="" id="site">
+                <option value="https://google,com">구글</option>
+                <option value="https://daum.net" selected>다음</option>
+                <option value="https://naver.com">네아버</option>
+            </select>
+
+            <p class="site">hello</p>
+            <p><a href="https://daum.net">이밴트 객체</a></p>
+        </section>
+
+        <script>
+            $('#site').on('change',function(){
+                $('.site').text($(this).val())
+            })
+
+            //이밴트 객체
+            $('.btn').on('click',function(e){
+                e.preventDefault()
+                console.log(e.target.text);
+            })
+        </script>
+
+    </div>
+    
+    
+
+
+
+</body>
+</html>
