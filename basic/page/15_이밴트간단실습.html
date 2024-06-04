@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <p class="btns">
+        <button class="ninus">-</button>
+        <button class="default">100%</button>
+        <button class="plus">+</button>
+    </p>
+
+    <p class="font_size">font size : <span>14</span>px</p>
+
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. A explicabo placeat culpa possimus ab provident itaque omnis dolore labore necessitatibus. Maxime dolor libero soluta molestiae, a sapiente quaerat praesentium fuga!'</p>
+
+    <script>
+        //최대 20, 최소 8
+        let fontSize = 14
+        $('body').css('fontSize',fontSize)
+
+        
+        $('.btns button').on('click', function(){
+            if($(this).hasClass('plus')){
+                if(fontSize >= 20) return
+                fontSize++
+            }
+            else if($(this).hasClass('ninus')){
+                if(fontSize <= 8) return 
+                fontSize--
+            }
+            else{
+                fontSize = 14
+            }
+
+            $('.font_size span').text(fontSize)
+            $('body').css('fontSize',fontSize)
+        })
+    </script>
+</body>
+</html>

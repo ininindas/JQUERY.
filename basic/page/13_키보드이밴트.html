@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <h1>키보드 이밴트</h1>    
+    <p>
+        <input type="text" id="keyValue" />
+    </p>
+
+    <script>
+        // keydown() 모든키에 이벤트 발생
+        // keypress() - 기능키(f.., alt, ctrl, shift, 화살표, backspace, caps lock, 한영, tab)는 제외
+        // keyup()
+
+        $(document).on('keydown',keyfunc)
+
+        function keyfunc(e){
+            var result = ''
+            // t:38 d:40 l:37 r:39
+            switch(e.keyCode){
+                case 37:
+                    result = 'LEFT'
+                    break
+                case 38:
+                    result = 'TOP'
+                    break
+                case 39:
+                    result = 'RIGHT'
+                    break
+                case 40:
+                    result = 'BOTTON'
+                    break
+                default :
+                    result = e.key 
+                    
+            }
+            $('#keyValue').val(result)
+        }
+
+    </script>
+</body>
+</html>
