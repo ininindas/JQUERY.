@@ -35,20 +35,20 @@
 
 
     <script>
-    //     var btns = $('.tab li')
-    //     var content = $('tab_content')
+        var btns = $('.tab li')
+        var content = $('.tab_content')
 
-    //     btns.eq(0).addClass('active')
-    //     content.hide().eq(0).show()
-    //     btns.click(function(){
-    //         btns.find('a').removeClass('active')
-    //         $(this).find('a').addClass('active')
+        btns.eq(0).addClass('active')
+        content.hide().eq(0).show()
+        btns.click(function(){
+            btns.find('li').removeClass('active')
+            $(this).find('li').addClass('active')
 
-    //         content.hide()
+            content.hide()
 
-    //         var activeIndex = $(this).index()
-    //         content.eq(activeIndex).show()
-    //     })
+            var activeIndex = $(this).index()
+            content.eq(activeIndex).show()
+        })
  
     $( "#tabs" ).tabs();
     var btns = $('.tab li')
