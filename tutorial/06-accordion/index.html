@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>accordion</h1>
+        <div class="text_box">
+            <h3>This is title 1</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quisquam repellendus maiores sapiente laboriosam necessitatibus dolorum ad accusamus? Accusamus amet assumenda eius vero at ad unde perspiciatis asperiores distinctio pariatur.
+            </p>
+        </div>
+
+        <div class="text_box">
+            <h3>This is title 2</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quisquam repellendus maiores sapiente laboriosam necessitatibus dolorum ad accusamus? Accusamus amet assumenda eius vero at ad unde perspiciatis asperiores distinctio pariatur.Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quisquam repellendus maiores sapiente laboriosam necessitatibus dolorum ad accusamus? Accusamus amet assumenda eius vero at ad unde perspiciatis asperiores distinctio pariatur.
+            </p>
+        </div>
+
+        <div class="text_box">
+            <h3>This is title 3</h3>
+            <p class="text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae quisquam repellendus maiores sapiente laboriosam necessitatibus
+            </p>
+        </div>
+    </div>
+
+
+
+    <script>
+        $('.text_box:frist').find('h3').addClass('active')
+        $('.text_box:frist').find('p').slideDown()
+
+        $('.text_box h3').on('click', function(){
+            // $(this).addClass('active')
+            // $('.text_box').find('p').slideDown()
+
+            if($(this).hasClass('active')) {
+                $('.text_box').find('p').slideUp()
+                $(this).removeClass('active').next().slideUp()
+            }else {
+                $('.text_box h3').removeClass('active')
+                $('.text_box').find('p').slideUp()
+                $(this).addClass('active').next().slideDown()
+            }
+        })
+    </script>        
+</body>
+</html>
