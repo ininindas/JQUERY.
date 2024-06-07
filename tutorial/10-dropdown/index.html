@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+      <header>
+        <div class="logo">가나다</div>
+        <ul class="gnb">
+            <li>
+                <a href="">소개</a>
+                <ul>
+                    <li><a href="">인사말</a></li>
+                    <li><a href="">수상내역</a></li>
+                    <li><a href="">주요연혁</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">서비스</a>
+                <ul>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">서비스</a>
+                <ul>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">서비스</a>
+                <ul>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">서비스</a>
+                <ul>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                    <li><a href="">디자인</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">서비스</a>
+                <ul>
+                    <li><a href="">디자인</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="user">
+            <i class="xi-user"></i>
+        </div>
+      </header>
+
+      <main>
+        <div class="slide">
+            <img src="../images/slide_01.jpg" alt="">
+        </div>
+      </main>
+    </div>
+
+
+
+    <script>
+        var item = $('.gnb li')
+
+        item.hover(
+            function(){
+                $(this).find('ul').stop().slideDown('fast')
+        },
+        function(){
+            $(this).find('ul').stop().slideUp('fast')
+        }
+    )
+    </script>        
+</body>
+</html>
