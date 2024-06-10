@@ -1,0 +1,58 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    display: flex;
+    padding: 6px 12px;
+    background-color: #111;
+    color: #fff;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 30px;
+    background-color: #fff;
+}
+
+.box{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    padding: 26px;
+    background-color: #fff;
+}
+
+.box img {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+}
+
+h3 {
+    margin: 20px 0;
+}
+
+.slrgle, .gallary {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+
+}
+
+.slrgle img , .gallary img {
+    width: 100%;
+    display: block;
+}
