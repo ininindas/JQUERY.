@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
 		<h1>iostope</h1>
-		<button class="btn active" data-filter=".all">전체</button>
-		<button class="btn" data-filter=".cloud">구름</button>
-		<button class="btn" data-filter=".mountain">산</button>
-		<button class="btn" data-filter=".sea">바다</button>
-		<button class="btn" data-filter=".wind">바람</button>
+		<div class="btns">
+			<button class="btn active" data-filter="*">전체</button>
+			<button class="btn" data-filter=".cloud">구름</button>
+			<button class="btn" data-filter=".mountain">산</button>
+			<button class="btn" data-filter=".sea">바다</button>
+			<button class="btn" data-filter=".wind">바람</button>
+		</div>
 
 
 		<div class="grid">
@@ -117,14 +119,14 @@
 			return name.match( /ium$/ );
 		}
 		};
-		// change is-checked class on buttons
-		$('.btns').each( function( i, buttonGroup ) {
-			var $buttonGroup = $( buttonGroup );
-		$buttonGroup.on( 'click', 'button', function() {
-			$buttonGroup.find('.is-checked').removeClass('is-checked');
-			$( this ).addClass('is-checked');
-			});
-		});
+        // bind filter button click
+        $('.btns').on( 'click', 'button', function() {
+            var filterValue = $( this ).attr('data-filter');
+            filterValue = filterFns[ filterValue ] || filterValue;
+            $grid.isotope({ filter: filterValue });
+            $('.btns button').removeClass("active")
+            $(this).addClass('active')
+        }); 
 
     </script>        
 </body>
