@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+		<h1>iostope</h1>
+		<button class="btn active" data-filter=".all">전체</button>
+		<button class="btn" data-filter=".cloud">구름</button>
+		<button class="btn" data-filter=".mountain">산</button>
+		<button class="btn" data-filter=".sea">바다</button>
+		<button class="btn" data-filter=".wind">바람</button>
+
+
+		<div class="grid">
+		<div class="element-item mountain">
+			<div class="photo">
+				<img src="../images/gallery_01.jpg" alt="">
+			</div>
+			<p>산</p>
+		</div>
+		<div class="element-item sea">
+			<div class="photo">
+				<img src="../images/gallery_02.jpg" alt="">
+			</div>
+			<p>바다</p>
+		</div>
+		<div class="element-item cloud">
+			<div class="photo">
+				<img src="../images/gallery_03.jpg" alt="">
+			</div>
+			<p>구름</p>
+		</div>
+		<div class="element-item cloud">
+			<div class="photo">
+				<img src="../images/gallery_04.jpg" alt="">
+			</div>
+			<p>구름</p>
+		</div>
+		<div class="element-item mountain">
+			<div class="photo">
+				<img src="../images/gallery_05.jpg" alt="">
+			</div>
+			<p>산</p>
+		</div>
+		<div class="element-item wind">
+			<div class="photo">
+				<img src="../images/gallery_06.jpg" alt="">
+			</div>
+			<p>바람</p>
+		</div>
+		<div class="element-item sea">
+			<div class="photo">
+				<img src="../images/gallery_07.jpg" alt="">
+			</div>
+			<p>바다</p>
+		</div>
+		<div class="element-item cloud">
+			<div class="photo">
+				<img src="../images/gallery_08.jpg" alt="">
+			</div>
+			<p>구름</p>
+		</div>
+		<div class="element-item wind">
+			<div class="photo">
+				<img src="../images/gallery_09.jpg" alt="">
+			</div>
+			<p>바람</p>
+		</div>
+		<div class="element-item wind">
+			<div class="photo">
+				<img src="../images/gallery_10.jpg" alt="">
+			</div>
+			<p>바람</p>
+		</div>
+		<div class="element-item sea">
+			<div class="photo">
+				<img src="../images/gallery_11.jpg" alt="">
+			</div>
+			<p>바다</p>
+		</div>
+		<div class="element-item mountain">
+			<div class="photo">
+				<img src="../images/gallery_12.jpg" alt="">
+			</div>
+			<p>산</p>
+		</div>
+		</div>
+    </div>
+
+     
+ 
+
+
+    <script>
+		var $grid = $('.grid').isotope({
+			itemSelector: '.element-item',
+			layoutMode: 'fitRows'
+		});
+		// filter functions
+		var filterFns = {
+		// show if number is greater than 50
+		numberGreaterThan50: function() {
+			var number = $(this).find('.number').text();
+			return parseInt( number, 10 ) > 50;
+		},
+		// show if name ends with -ium
+		ium: function() {
+			var name = $(this).find('.name').text();
+			return name.match( /ium$/ );
+		}
+		};
+		// change is-checked class on buttons
+		$('.btns').each( function( i, buttonGroup ) {
+			var $buttonGroup = $( buttonGroup );
+		$buttonGroup.on( 'click', 'button', function() {
+			$buttonGroup.find('.is-checked').removeClass('is-checked');
+			$( this ).addClass('is-checked');
+			});
+		});
+
+    </script>        
+</body>
+</html>
