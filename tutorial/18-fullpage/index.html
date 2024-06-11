@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.22/fullpage.min.js"></script>
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js"></script>	
 	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -16,10 +17,10 @@
 	</div>
   
 	<ul class="nav">
-		<li><a href="">html</a></li>
-		<li><a href="">css</a></li>
-		<li><a href="">java</a></li>
-		<li><a href="">jquery</a></li>
+		<li><a href="#page1" data-menuanchor="page1">html</a></li>
+        <li><a href="#page2" data-menuanchor="page2">css</a></li>
+        <li><a href="#page3" data-menuanchor="page3">javascript</a></li>
+        <li><a href="#page4" data-menuanchor="page4">jquery</a></li>
 	</ul>
  
 	<div class="fullpage">
@@ -55,10 +56,12 @@
     <script>
 		$('.fullpage').fullpage({
         autoScrolling:true,
-        scrollHorizontally: true
+        scrollHorizontally: true,
+		navigation: true,            
+        menu : '.nav',
+        anchors : ['page1', 'page2', 'page3', 'page4'],
     	});
 
-    $.fn.fullpage.setAllowScrolling(false);
 
 		$('.bars').on('click',function(){
 			$('.nav').toggleClass('active')

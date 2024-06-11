@@ -54,4 +54,25 @@ header {
     margin-top: 16px;
 }
 
+table.users {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin: 50px 0;
+    border-collapse: collapse;
+}
+
+table.users td,table.users th {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+table.users th{
+    font-size: 14px;
+    background-color: rgb(111, 111, 197);
+    color: #fff;
+}
+
+table.user tbody tr:nth-child(odd) {
+    background-color: #ddd;
+}
 
